@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         this.map = tomtomMap;
 
         LatLng amsterdam;
-        amsterdam = new LatLng(27.40, 81.78);
+        amsterdam = new LatLng(52.44, 4.80);
         SimpleMarkerBalloon balloon = new SimpleMarkerBalloon("Amsterdam");
         tomtomMap.addMarker(new MarkerBuilder(amsterdam).markerBalloon(balloon));
         tomtomMap.centerOn(CameraPosition.builder(amsterdam).zoom(7).build());
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private View.OnClickListener mapOnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            LatLng amsterdam = new LatLng(27.40, 81.78);
-            LatLng hague = new LatLng(29.31, 81.42);
+            LatLng amsterdam = new LatLng(52.44, 4.80);
+            LatLng hague = new LatLng(52.07, 4.30);
             RoutingApi routingApi = OnlineRoutingApi.create(getApplicationContext());
             RouteQuery routeQuery = new RouteQueryBuilder(amsterdam, hague).withRouteType(RouteType.FASTEST);
             routingApi.planRoute(routeQuery)
